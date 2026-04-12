@@ -20,3 +20,40 @@ body {
     linear-gradient(to right, #121212 1px, transparent 1px),
     linear-gradient(to bottom, #121212 1px, transparent 1px);
 }
+
+@layer utilities {
+   /* Subtle flicker animation for the status indicators */
+  .animate-flicker {
+    animation: flicker 2s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+    20%, 22%, 24%, 55% { opacity: 0.4; }
+  }
+
+  /* The "Scanline" overlay for that retro-tech feel */
+  .scanline {
+    width: 100%;
+    height: 2px;
+    z-index: 10;
+    background: rgba(0, 255, 65, 0.1);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 8s linear infinite;
+  }
+
+  @keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: 0%; }
+  }
+}
+
+@layer utilities {
+  .clip-file {
+    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
+    /* Add this to prevent jagged edges on the diagonal clip */
+    will-change: clip-path;
+  }
+}

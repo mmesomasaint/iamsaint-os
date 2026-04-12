@@ -1,65 +1,129 @@
-import Image from "next/image";
+import ProductBlade from "@/components/system/ProductBlade"
+import LiveStatus from "@/components/ui/LiveStatus"
+import ModuleCard from "@/components/ui/ModuleCard"
+import SystemMetrics from "@/components/ui/SystemMetrics"
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="space-y-20">
+      {/* Hero Section */}
+      <section className="py-20 border-l-2 border-system-green pl-8">
+        <div className="space-y-4">
+          <p className="text-system-green font-mono text-sm uppercase tracking-widest">
+            {`> Initializing System... [OK]`}
           </p>
+          <h1 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none">
+            Systems <br /> 
+            <span className="text-gray-500">Architect</span>
+          </h1>
+          <div className="max-w-2xl text-gray-400 text-lg leading-relaxed">
+            I build digital infrastructure where 
+            <span className="text-white"> decentralized finance</span>, 
+            <span className="text-white"> agentic AI</span>, and 
+            <span className="text-white"> automated DevOps</span> converge.
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* The 3 Vertical Traps - Grid Layout */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <ModuleCard 
+          id="01" 
+          title="Web3 / Finance" 
+          status="SECURED" 
+          desc="Architecting trustless interfaces and friction-heavy transaction flows." 
+        />
+        <ModuleCard 
+          id="02" 
+          title="Agentic AI" 
+          status="PROCESSING" 
+          desc="UX for probabilistic intelligence and human-in-the-loop workflows and experiences." 
+        />
+        <ModuleCard 
+          id="03" 
+          title="DevOps" 
+          status="SCALED" 
+          desc="CI/CD pipelines for venture studio infrastructure and cloud-native apps." 
+        />
+      </section>
+
+      {/* Operational Philosophy section */}
+      <section className="mt-24 border-t border-system-border pt-16">
+        <div className="max-w-3xl">
+          <h2 className="text-xs font-mono text-system-green uppercase tracking-[0.3em] mb-4">
+            // Operational_Philosophy
+          </h2>
+          <h3 className="text-4xl font-black uppercase tracking-tighter mb-12">
+            How I Solve <br /> <span className="text-gray-500">Complex Systems</span>
+          </h3>
+          
+          <div className="space-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-4">
+              <span className="font-mono text-gray-600 text-sm">[01]</span>
+              <div>
+                <h4 className="font-bold uppercase text-white mb-2 text-xl">The Trust-less Interface</h4>
+                <p className="text-gray-400 font-light leading-relaxed">
+                  In Finance and Web3, UI is a liability. I architect interfaces that prioritize 
+                  transactional clarity, state-validation, and user-autonomy to eliminate friction in high-stakes environments.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-4">
+              <span className="font-mono text-gray-600 text-sm">[02]</span>
+              <div>
+                <h4 className="font-bold uppercase text-white mb-2 text-xl">Agentic Intelligence</h4>
+                <p className="text-gray-400 font-light leading-relaxed">
+                  AI shouldn't be a chatbot; it should be an engine. I design probabilistic UIs that 
+                  manage LLM hallucinations through robust human-in-the-loop validation checkpoints.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Connection Protocol */}
+      <section className="mt-32 mb-20">
+        <div className="bg-zinc-900 bg-system-green/5 p-8 md:p-12 relative overflow-hidden"
+          style={{ clipPath: "polygon(0 0, 90% 0, 100% 30%, 100% 100%, 0 100%)" }}
+        >
+          {/* Decorative corner accents */}
+          <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-system-green" />
+          
+          <div className="max-w-2xl">
+            <h2 className="text-xs font-mono text-system-green uppercase tracking-[0.4em] mb-6">
+              // Connection_Protocol
+            </h2>
+            <h3 className="text-4xl font-black uppercase tracking-tighter mb-6">
+              Ready to build the <br /> <span className="text-white">Next Infrastructure?</span>
+            </h3>
+            <p className="text-gray-400 font-mono text-sm mb-10 leading-relaxed">
+              I am currently accepting high-impact mandates for Web3 architecture, 
+              AI workflow engineering, and DevOps scaling.
+            </p>
+
+            <a 
+              href="mailto:saint@optimalogic.studio" 
+              className="inline-block bg-zinc-600 text-black font-bold uppercase py-4 px-8 hover:bg-white transition-colors duration-300 tracking-tighter"
+          style={{ clipPath: "polygon(0 0, 90% 0, 100% 35%, 100% 100%, 0 100%)" }}
+            >
+              Initiate_Handshake.exe
+            </a>
+          </div>
+
+          {/* Metadata background text for texture */}
+          <div className="absolute -bottom-4 -right-4 opacity-5 pointer-events-none select-none">
+            <span className="text-8xl font-black uppercase">HANDSHAKE</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Status */}
+      <LiveStatus />
+      
+      {/* System Metrics */}
+      <SystemMetrics />
     </div>
   );
 }
