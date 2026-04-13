@@ -6,7 +6,37 @@ const mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SAINT // Systems Architect",
-  description: "Web3, AI, and DevOps Infrastructure",
+  description: "Web3, AI, and DevOps Infrastructure for high-stakes environments.",
+  metadataBase: new URL('https://iamsaint.me'), // Required for absolute OG paths
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "SAINT // Systems Architect",
+    description: "Architecting decentralized finance, agentic AI, and automated DevOps.",
+    url: 'https://iamsaint.me',
+    siteName: 'IAMSAINT.ME',
+    images: [
+      {
+        url: '/opengraph-image.png', // Pointing to your public folder
+        width: 1200,
+        height: 630,
+        alt: 'SAINT // Systems Architect Console',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "SAINT // Systems Architect",
+    description: "Web3, AI, and DevOps Infrastructure.",
+    images: ['/opengraph-image.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({
