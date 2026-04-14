@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         // The .tech "Industrial" Palette
-        background: "#050505", // Deep pitch black
-        foreground: "#FFFFFF",
-        "system-green": "#00FF41", // Matrix/Terminal Green
-        "system-gray": "#121212",  // Card backgrounds
-        "system-border": "#262626", // Thin, sharp grid lines
+        background: "var(--background)", // Deep pitch black
+        foreground: "var(--foreground)",
+        "system-green": "var(--system-green)", // Matrix/Terminal Green
+        "system-gray": "var(--system-gray)",  // Card backgrounds
+        "system-border": "var(--system-border)", // Thin, sharp grid lines
       },
       fontFamily: {
         // High-signal technical fonts

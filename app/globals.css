@@ -4,6 +4,15 @@
 :root {
   --background: #050505;
   --foreground: #ffffff;
+  --system-green: #00FF41; 
+  --system-border: #1A1A1A;
+  --system-gray: #121212;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white;
+  }
 }
 
 body {
@@ -22,6 +31,40 @@ body {
 }
 
 @layer utilities {
+  
+  .text-system-green {
+    color: var(--system-green);
+  }
+  .border-system-green {
+    border-color: var(--system-green);
+  }
+  .bg-system-green {
+    background-color: var(--system-green);
+  }
+  .bg-system-border {
+    background-color: var(--system-border);
+  }
+  .bg-system-gray {
+    background-color: var(--system-gray);
+  }
+  .border-system-border {
+    border-color: var(--system-border);
+  }
+  .border-system-gray {
+    border-color: var(--system-gray);
+  }
+  
+  /* Optional: Add a glow utility for that Senior Architect feel */
+  .glow-system-green {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  }
+
+  .clip-file {
+    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
+    /* Add this to prevent jagged edges on the diagonal clip */
+    will-change: clip-path;
+  }
+
    /* Subtle flicker animation for the status indicators */
   .animate-flicker {
     animation: flicker 2s infinite;
@@ -47,13 +90,5 @@ body {
   @keyframes scanline {
     0% { bottom: 100%; }
     100% { bottom: 0%; }
-  }
-}
-
-@layer utilities {
-  .clip-file {
-    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
-    /* Add this to prevent jagged edges on the diagonal clip */
-    will-change: clip-path;
   }
 }
