@@ -52,9 +52,9 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
             <span className="font-bold tracking-tighter text-system-green">IAMSAINT STUDIO</span>
             <div className="flex gap-6 text-xs uppercase tracking-widest text-gray-400">
-              <a href="#finance" className="hover:text-white transition-colors">/finance</a>
-              <a href="#intelligence" className="hover:text-white transition-colors">/intelligence</a>
-              <a href="#ops" className="hover:text-white transition-colors">/ops</a>
+              <a href="/finance" className="hover:text-white transition-colors">/finance</a>
+              <a href="/intelligence" className="hover:text-white transition-colors">/intelligence</a>
+              <a href="/ops" className="hover:text-white transition-colors">/ops</a>
             </div>
           </div>
         </nav>
