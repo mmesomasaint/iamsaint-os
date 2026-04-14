@@ -105,7 +105,7 @@ export default function Home() {
 
             <a 
               href="mailto:saint@optimalogic.studio" 
-              className="inline-block bg-zinc-600 text-black font-bold uppercase py-4 px-8 hover:bg-white transition-colors duration-300 tracking-tighter"
+              className="inline-block text-black font-bold uppercase py-4 px-8 hover:bg-white transition-colors duration-300 tracking-tighter"
           style={{ clipPath: "polygon(0 0, 90% 0, 100% 35%, 100% 100%, 0 100%)" }}
             >
               Initiate_Handshake.exe
