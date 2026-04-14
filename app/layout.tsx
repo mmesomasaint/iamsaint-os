@@ -50,7 +50,7 @@ export default function RootLayout({
         {/* Top Navigation Bar - Industrial Style */}
         <nav className="border-b border-system-border bg-background/80 backdrop-blur-md sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-            <span className="font-bold tracking-tighter text-system-green">IAMSAINT STUDIO</span>
+            <a href="/" className="font-bold tracking-tighter text-system-green">IAMSAINT</a>
             <div className="flex gap-6 text-xs uppercase tracking-widest text-gray-400">
               <a href="/finance" className="hover:text-white transition-colors">/finance</a>
               <a href="/intelligence" className="hover:text-white transition-colors">/intelligence</a>
@@ -65,7 +65,7 @@ export default function RootLayout({
 
         <footer className="border-t border-system-border mt-20">
           <div className="max-w-7xl mx-auto px-4 py-8 flex justify-between items-center text-[10px] text-gray-500 font-mono">
-            <span>© 2026 IAMSAINT STUDIO</span>
+            <span>© 2026 IAMSAINT</span>
             <span className="text-system-green">ST@OL.S : ACTIVE</span>
           </div>
         </footer>
