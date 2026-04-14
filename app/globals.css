@@ -14,12 +14,7 @@ body {
   color: var(--foreground);
   /* Apply a sharp, anti-aliased look for that premium feel */
   -webkit-font-smoothing: antialiased;
-}
-
-@layer base {
-  body {
-    @apply bg-background text-white;
-  }
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Add a subtle scanline effect or grid if you want to go full .tech */
