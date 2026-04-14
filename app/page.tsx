@@ -85,7 +85,7 @@ export default function Home() {
 
       {/* Connection Protocol */}
       <section className="mt-32 mb-20">
-        <div className="bg-zinc-900 bg-system-green/5 p-8 md:p-12 relative overflow-hidden"
+        <div className="bg-system-green/5 p-8 md:p-12 relative overflow-hidden"
           style={{ clipPath: "polygon(0 0, 90% 0, 100% 30%, 100% 100%, 0 100%)" }}
         >
           {/* Decorative corner accents */}

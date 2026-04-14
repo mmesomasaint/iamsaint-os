@@ -3,7 +3,7 @@ export default function ModuleCard({ id, title, status, desc }: any) {
     <div className="relative group">
       {/* The Clipped Background Layer */}
       <div 
-        className="absolute inset-0 bg-system-border bg-zinc-900 group-hover:bg-system-green transition-colors duration-500"
+        className="absolute inset-0 bg-system-border group-hover:bg-system-green transition-colors duration-500"
         style={{ clipPath: "polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)" }}
       />
       
