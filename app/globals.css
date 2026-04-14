@@ -5,6 +5,7 @@
   --background: #050505;
   --foreground: #ffffff;
   --system-green: #00FF41; 
+  --system-green-rgb: 0 255 65;
   --system-border: #1A1A1A;
   --system-gray: #121212;
 }

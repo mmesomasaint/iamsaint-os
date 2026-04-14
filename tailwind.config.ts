@@ -12,7 +12,7 @@ const config: Config = {
         // The .tech "Industrial" Palette
         "background": "var(--background)", // Deep pitch black
         "foreground": "var(--foreground)",
-        "system-green": "var(--system-green)", // Matrix/Terminal Green
+        "system-green": "rgb(var(--system-green-rgb) / <alpha-value>)", // Matrix/Terminal Green
         "system-gray": "var(--system-gray)",  // Card backgrounds
         "system-border": "var(--system-border)", // Thin, sharp grid lines
       },
