@@ -27,7 +27,15 @@ body {
 }
 
 @layer utilities {
-  
+  .bg-system-green-5 {
+    background-color: rgba(0, 255, 65, 0.05);
+  }
+  .bg-system-green-10 {
+    background-color: rgba(0, 255, 65, 0.1);
+  }
+  .border-system-green-20 {
+    border-color: rgba(0, 255, 65, 0.2);
+  }
   .text-system-green {
     color: var(--system-green);
   }
