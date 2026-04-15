@@ -28,7 +28,7 @@ export async function getBlogPosts(): Promise<Post[]> {
 
   return response.results.map((page: any) => ({
     id: page.id,
-    title: page.properties.Name?.title[0]?.plain_text || "Untitled",
+    title: page.properties.Title?.title[0]?.plain_text || "Untitled",
     date: page.properties.Date?.date?.start || "No Date",
     slug: page.properties.Slug?.rich_text[0]?.plain_text || "",
     tags: page.properties.Tags?.multi_select.map((t: any) => t.name) || [],

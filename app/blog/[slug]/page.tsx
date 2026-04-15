@@ -1,15 +1,25 @@
 import { getBlogPosts, getPostContent } from "@/lib/notion";
 import { notFound } from "next/navigation";
 
-export const revalidate = 60; // Re-check Notion for new content every 60 seconds
+export async function generateStaticParams() {
+  const posts = await getBlogPosts();
+ 
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+// Ensure the page stays fresh
+export const revalidate = 60;
 
 export default async function BlogPost({ params }: { params: { slug: string } }) {
   const posts = await getBlogPosts();
   
-  // Find the specific post by its slug
-  const post = posts.find((p) => p.slug === params.slug);
+  // LOGIC CHECK: Find the post matching the slug from the URL
+  const post = posts.find((p) => p.slug.trim() === params.slug.trim());
 
   if (!post) {
+    console.error(`Post not found for slug: ${params.slug}`);
     notFound();
   }
 

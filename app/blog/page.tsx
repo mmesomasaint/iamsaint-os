@@ -1,5 +1,15 @@
 import { getBlogPosts } from "@/lib/notion";
 import Link from "next/link";
+export async function generateStaticParams() {
+  const posts = await getBlogPosts();
+ 
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+// Ensure the page stays fresh
+export const revalidate = 60;
 
 export const revalidate = 60; // Re-check Notion for new content every 60 seconds
 
