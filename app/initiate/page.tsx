@@ -9,7 +9,7 @@ export default function InitiatePage() {
   if (!PRI_EMAIL || !SEC_EMAIL || !FORMSPREE_ENDPOINT) {
     return (
       <div className="max-w-2xl mx-auto py-40 px-4 text-center">
-        <div className="border border-red-500 bg-red-300 p-12 clip-file">
+        <div className="border border-red-500 bg-gray-900 p-12 clip-file" style={{ clipPath: 'polygon(0 0, 90% 0, 100% 35%, 100% 100%, 0 100%)' }}>
           <h2 className="text-3xl font-black uppercase text-red-500 mb-4">Configuration_Error</h2>
           <p className="text-sm font-mono text-gray-400">
             Required environment variables are missing. Please check the server configuration.
@@ -24,7 +24,7 @@ export default function InitiatePage() {
   if (state.succeeded) {
     return (
       <div className="max-w-2xl mx-auto py-40 px-4 text-center">
-        <div className="border border-system-green bg-system-green-5 p-12 clip-file">
+        <div className="border border-system-green bg-system-green-5 p-12 clip-file" style={{ clipPath: 'polygon(0 0, 90% 0, 100% 35%, 100% 100%, 0 100%)' }}>
           <h2 className="text-3xl font-black uppercase text-system-green mb-4">Transmission_Complete</h2>
           <p className="text-sm font-mono text-gray-400">
             Handshake protocol initiated. Data has been routed to Saint's secure endpoint.
@@ -110,6 +110,7 @@ export default function InitiatePage() {
               type="submit" 
               disabled={state.submitting}
               className="w-full py-4 bg-system-green-5 border border-system-green/20 text-system-green font-bold uppercase text-xs tracking-widest hover:bg-system-green hover:text-black transition-all clip-file disabled:opacity-50 disabled:cursor-wait"
+              style={{ clipPath: 'polygon(0 0, 90% 0, 100% 35%, 100% 100%, 0 100%)' }}
             >
               {state.submitting ? "TRANSMITTING..." : "TRANSMIT_DATA"}
             </button>
