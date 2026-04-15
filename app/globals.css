@@ -33,8 +33,14 @@ body {
   .bg-system-green-10 {
     background-color: rgba(0, 255, 65, 0.1);
   }
+  .bg-system-green-20 {
+    background-color: rgba(0, 255, 65, 0.2);
+  }
   .border-system-green-20 {
     border-color: rgba(0, 255, 65, 0.2);
+  }
+  .border-system-green-30 {
+    border-color: rgba(0, 255, 65, 0.3);
   }
   .text-system-green {
     color: var(--system-green);
