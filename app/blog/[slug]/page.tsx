@@ -12,14 +12,19 @@ export async function generateStaticParams() {
 // Ensure the page stays fresh
 export const revalidate = 60;
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  // Wait for the params to extract the slug string
+  const resolvedParams = await params;
+  const currentSlug = resolvedParams.slug;
+
+  // Fetch posts
   const posts = await getBlogPosts();
   
-  // LOGIC CHECK: Find the post matching the slug from the URL
-  const post = posts.find((p) => p.slug.trim() === params.slug.trim());
+  // Match using the resolved slug
+  const post = posts.find((p) => p.slug.trim() === currentSlug.trim());
 
   if (!post) {
-    console.error(`Post not found for slug: ${params.slug}`);
+    console.error(`Post not found for slug: ${currentSlug}`);
     notFound();
   }
 
