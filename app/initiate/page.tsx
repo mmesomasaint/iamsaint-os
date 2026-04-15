@@ -5,7 +5,7 @@ export default function InitiatePage() {
   const PRI_EMAIL = process.env.PRI_EMAIL_ADDR;
   const SEC_EMAIL = process.env.SEC_EMAIL_ADDR;
   const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT;
-  
+
   if (!PRI_EMAIL || !SEC_EMAIL || !FORMSPREE_ENDPOINT) {
     return (
       <div className="max-w-2xl mx-auto py-40 px-4 text-center">
@@ -13,6 +13,8 @@ export default function InitiatePage() {
           <h2 className="text-3xl font-black uppercase text-red-500 mb-4">Configuration_Error</h2>
           <p className="text-sm font-mono text-gray-400">
             Required environment variables are missing. Please check the server configuration.
+            <br/>
+            {`Missing: ${!PRI_EMAIL ? "PRI_EMAIL_ADDR " : ""}${!SEC_EMAIL ? "SEC_EMAIL_ADDR " : ""}${!FORMSPREE_ENDPOINT ? "FORMSPREE_ENDPOINT" : ""}`}
           </p>
         </div>
       </div>
