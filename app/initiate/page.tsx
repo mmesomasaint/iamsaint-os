@@ -1,11 +1,11 @@
 "use client";
 import { useForm, ValidationError } from '@formspree/react';
 
-const PRI_EMAIL = process.env.PRI_EMAIL_ADDR;
-const SEC_EMAIL = process.env.SEC_EMAIL_ADDR;
-const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT;
-
 export default function InitiatePage() {
+  const PRI_EMAIL = process.env.PRI_EMAIL_ADDR;
+  const SEC_EMAIL = process.env.SEC_EMAIL_ADDR;
+  const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT;
+  
   if (!PRI_EMAIL || !SEC_EMAIL || !FORMSPREE_ENDPOINT) {
     return (
       <div className="max-w-2xl mx-auto py-40 px-4 text-center">
