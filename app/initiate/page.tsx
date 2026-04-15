@@ -2,9 +2,9 @@
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function InitiatePage() {
-  const PRI_EMAIL = process.env.PRI_EMAIL_ADDR;
-  const SEC_EMAIL = process.env.SEC_EMAIL_ADDR;
-  const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT;
+  const PRI_EMAIL = process.env.NOTION_PUBLIC_PRI_EMAIL_ADDR;
+  const SEC_EMAIL = process.env.NOTION_PUBLIC_SEC_EMAIL_ADDR;
+  const FORMSPREE_ENDPOINT = process.env.NOTION_PUBLIC_FORMSPREE_ENDPOINT;
 
   if (!PRI_EMAIL || !SEC_EMAIL || !FORMSPREE_ENDPOINT) {
     return (
