@@ -20,16 +20,8 @@ export async function getBlogPosts(): Promise<Post[]> {
   const response = await notion.dataSources.query({
     data_source_id: process.env.NOTION_DATA_SOURCE_ID!,
     filter: {
-        and: [
-            {
-                property: "Status",
-                select: { equals: "Published" },
-            },
-            {
-                property: "in_trash",
-                checkbox: { equals: false } 
-            }
-        ]
+      property: "Status",
+      select: { equals: "Published" },
     },
     sorts: [{ property: "Date", direction: "descending" }],
   });
