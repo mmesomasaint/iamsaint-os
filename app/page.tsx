@@ -104,7 +104,7 @@ export default function Home() {
             </p>
 
             <a 
-              href="mailto:saint@optimalogic.studio" 
+              href="/initiate" 
               className="inline-block bg-system-border text-white font-bold uppercase py-4 px-8 hover:bg-white hover:text-black transition-colors duration-300 tracking-tighter"
           style={{ clipPath: "polygon(0 0, 90% 0, 100% 35%, 100% 100%, 0 100%)" }}
             >
