@@ -26,23 +26,7 @@ body {
     linear-gradient(to bottom, #121212 1px, transparent 1px);
 }
 
-@layer utilities {
-  .bg-system-green-5 {
-    background-color: rgba(0, 255, 65, 0.05);
-  }
-  .bg-system-green-10 {
-    background-color: rgba(0, 255, 65, 0.1);
-  }
-  .bg-system-green-20 {
-    background-color: rgba(0, 255, 65, 0.2);
-  }
-  .border-system-green-20 {
-    border-color: rgba(0, 255, 65, 0.2);
-  }
-  .border-system-green-30 {
-    border-color: rgba(0, 255, 65, 0.3);
-  }
-  .text-system-green {
+@layer utilities {.text-system-green {
     color: var(--system-green);
   }
   .border-system-green {
@@ -63,6 +47,25 @@ body {
   .border-system-gray {
     border-color: var(--system-gray);
   }
+  .bg-system-green-5 {
+    background-color: rgba(0, 255, 65, 0.05);
+  }
+  .bg-system-green-10 {
+    background-color: rgba(0, 255, 65, 0.1);
+  }
+  .bg-system-green-20 {
+    background-color: rgba(0, 255, 65, 0.2);
+  }
+  .bg-system-green-30 {
+    background-color: rgba(0, 255, 65, 0.3);
+  }
+  .border-system-green-20 {
+    border-color: rgba(0, 255, 65, 0.2);
+  }
+  .border-system-green-30 {
+    border-color: rgba(0, 255, 65, 0.3);
+  }
+  
   
   /* Optional: Add a glow utility for that Senior Architect feel */
   .glow-system-green {
