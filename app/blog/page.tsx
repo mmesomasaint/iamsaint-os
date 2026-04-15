@@ -11,8 +11,6 @@ export async function generateStaticParams() {
 // Ensure the page stays fresh
 export const revalidate = 60;
 
-export const revalidate = 60; // Re-check Notion for new content every 60 seconds
-
 export default async function BlogPage() {
   const posts = await getBlogPosts();
 
