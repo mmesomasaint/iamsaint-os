@@ -50,11 +50,30 @@ export default function RootLayout({
         {/* Top Navigation Bar - Industrial Style */}
         <nav className="border-b border-system-border bg-background/80 backdrop-blur-md sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-            <a href="/" className="font-bold tracking-tighter text-system-green">IAMSAINT</a>
-            <div className="flex gap-6 text-xs uppercase tracking-widest text-gray-400">
-              <a href="/finance" className="hover:text-white transition-colors">/finance</a>
-              <a href="/intelligence" className="hover:text-white transition-colors">/intelligence</a>
-              <a href="/ops" className="hover:text-white transition-colors">/ops</a>
+            <a href="/" className="font-bold tracking-tighter text-system-green group">
+              IAMSAINT <span className="text-[10px] text-gray-600 group-hover:text-system-green/50 transition-colors ml-1">v1.0.4</span>
+            </a>
+
+            <div className="flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] text-gray-500">
+              {/* Core Sectors */}
+              <div className="hidden md:flex gap-6">
+                <a href="/finance" className="hover:text-white transition-colors">/finance</a>
+                <a href="/intelligence" className="hover:text-white transition-colors">/intelligence</a>
+                <a href="/ops" className="hover:text-white transition-colors">/ops</a>
+              </div>
+
+              {/* The Journal "Trap" - High Contrast Industrial Style */}
+              <a 
+                href="/blog" 
+                className="relative px-4 py-1.5 bg-system-green-5 border border-system-green/30 text-system-green hover:bg-system-green hover:text-black transition-all duration-300 clip-file flex items-center gap-2 group"
+              >
+                {/* Live Status Pulse */}
+                <span className="w-1.5 h-1.5 rounded-full bg-system-green animate-pulse" />
+                <span className="font-bold">Journal.exe</span>
+                
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-2 h-2 bg-system-green/20" style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
+              </a>
             </div>
           </div>
         </nav>
