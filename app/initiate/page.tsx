@@ -2,9 +2,9 @@
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function InitiatePage() {
-  const PRI_EMAIL = process.env.NOTION_PUBLIC_PRI_EMAIL_ADDR;
-  const SEC_EMAIL = process.env.NOTION_PUBLIC_SEC_EMAIL_ADDR;
-  const FORMSPREE_ENDPOINT = process.env.NOTION_PUBLIC_FORMSPREE_ENDPOINT;
+  const PRI_EMAIL = process.env.NEXT_PUBLIC_PRI_EMAIL_ADDR;
+  const SEC_EMAIL = process.env.NEXT_PUBLIC_SEC_EMAIL_ADDR;
+  const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 
   if (!PRI_EMAIL || !SEC_EMAIL || !FORMSPREE_ENDPOINT) {
     return (
@@ -13,8 +13,6 @@ export default function InitiatePage() {
           <h2 className="text-3xl font-black uppercase text-red-500 mb-4">Configuration_Error</h2>
           <p className="text-sm font-mono text-gray-400">
             Required environment variables are missing. Please check the server configuration.
-            <br/>
-            {`Missing: ${!PRI_EMAIL ? "PRI_EMAIL_ADDR " : ""}${!SEC_EMAIL ? "SEC_EMAIL_ADDR " : ""}${!FORMSPREE_ENDPOINT ? "FORMSPREE_ENDPOINT" : ""}`}
           </p>
         </div>
       </div>
