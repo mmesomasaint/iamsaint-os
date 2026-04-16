@@ -74,12 +74,6 @@ body {
     text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
   }
 
-  .clip-file {
-    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
-    /* Add this to prevent jagged edges on the diagonal clip */
-    will-change: clip-path;
-  }
-
    /* Subtle flicker animation for the status indicators */
   .animate-flicker {
     animation: flicker 2s infinite;
@@ -105,5 +99,55 @@ body {
   @keyframes scanline {
     0% { bottom: 100%; }
     100% { bottom: 0%; }
+  }
+}
+
+@layer components {
+  .terminal-button {
+    @apply relative flex items-center justify-center transition-all duration-300;
+    /* The specific industrial clip */
+    clip-path: polygon(0 0, 88% 0, 100% 30%, 100% 100%, 0 100%);
+  }
+
+  /* The Border Layer */
+  .terminal-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* This creates the border thickness */
+    padding: 1px; 
+    background: var(--system-green);
+    opacity: 0.3;
+    /* The magic: Masking out the center so only the "padding" (border) shows */
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .terminal-button:hover::before {
+    opacity: 1; /* Glow the border on hover */
+  }
+
+  /* The Hover Background Layer */
+  .terminal-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--system-green);
+    transform: translateY(100%); /* Start hidden at the bottom */
+    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: -1; /* Stay behind the text */
+  }
+
+  .terminal-button:hover::after {
+    transform: translateY(0); /* Slide up on hover */
+  }
+
+  .terminal-button:hover {
+    @apply text-black; /* Flip text color */
   }
 }
