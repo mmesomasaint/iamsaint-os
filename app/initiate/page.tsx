@@ -109,7 +109,7 @@ export default function InitiatePage() {
             <button 
               type="submit" 
               disabled={state.submitting}
-              className="w-full py-4 bg-system-green-5 border border-system-green/20 text-system-green font-bold uppercase text-xs tracking-widest hover:bg-system-green hover:text-black transition-all clip-file disabled:opacity-50 disabled:cursor-wait"
+              className="w-full py-4 bg-system-green-5 border border-system-green/20 text-system-green font-bold uppercase text-xs tracking-widest hover:border-system-green hover:text-black transition-all clip-file disabled:opacity-50 disabled:cursor-wait"
               style={{ clipPath: 'polygon(0 0, 90% 0, 100% 35%, 100% 100%, 0 100%)' }}
             >
               {state.submitting ? "TRANSMITTING..." : "TRANSMIT_DATA"}
