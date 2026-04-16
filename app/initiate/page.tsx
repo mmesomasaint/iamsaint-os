@@ -109,7 +109,7 @@ export default function InitiatePage() {
             <button 
               type="submit" 
               disabled={state.submitting}
-              className="terminal-button tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
+              className="terminal-button w-full tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span className="inner-content">
                 {state.submitting ? "TRANSMITTING..." : "TRANSMIT_DATA"}
@@ -123,11 +123,12 @@ export default function InitiatePage() {
         <a 
           href="/saint-cv.pdf" 
           target="_blank"
-          className="inline-flex items-center gap-3 px-6 py-3 border border-system-green text-system-green text-[10px] font-bold uppercase tracking-widest hover:bg-system-green hover:text-black transition-all clip-file"
-          style={{ clipPath: 'polygon(0 0, 85% 0, 100% 25%, 100% 100%, 0 100%)' }}
+          className="terminal-button"
         >
-          <span className="w-2 h-2 bg-system-green rounded-full animate-pulse" />
-          Download_System_Manifest.pdf
+          <span className="inner-content">
+            <span className="w-2 h-2 bg-system-green rounded-full animate-pulse" />
+            Download_System_Manifest.pdf
+          </span>
         </a>
       </div>
     </div>
