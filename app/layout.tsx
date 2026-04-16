@@ -65,14 +65,11 @@ export default function RootLayout({
               {/* The Journal "Trap" - High Contrast Industrial Style */}
               <a 
                 href="/blog" 
-                className="relative px-4 py-1.5 terminal-button text-system-green flex items-center gap-2"
+                className="terminal-button px-4 py-1.5 text-system-green flex items-center gap-2"
               >
                 {/* Live Status Pulse */}
                 <span className="w-1.5 h-1.5 rounded-full bg-system-green animate-pulse" />
                 <span className="font-bold">Journal.exe</span>
-                
-                {/* Decorative corner accent */}
-                <div className="absolute top-0 right-0 w-2 h-2 bg-system-green-20 hover:border-system-green" />
               </a>
             </div>
           </div>
