@@ -111,7 +111,9 @@ export default function InitiatePage() {
               disabled={state.submitting}
               className="terminal-button w-full py-4 text-system-green font-bold uppercase text-xs tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {state.submitting ? "TRANSMITTING..." : "TRANSMIT_DATA"}
+              <span className="inner-content">
+                {state.submitting ? "TRANSMITTING..." : "TRANSMIT_DATA"}
+              </span>
             </button>
           </div>
         </form>

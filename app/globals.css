@@ -104,50 +104,29 @@ body {
 
 @layer components {
   .terminal-button {
-    @apply relative flex items-center justify-center transition-all duration-300;
-    /* The specific industrial clip */
+    @apply relative flex items-center justify-center transition-all duration-300 overflow-hidden;
+    /* We apply the clip to the container itself */
     clip-path: polygon(0 0, 88% 0, 100% 30%, 100% 100%, 0 100%);
+    color: var(--system-green);
+    background: var(--system-green); /* This will be the "Border Color" */
+    padding: 1px; /* This defines the "Border Thickness" */
   }
 
-  /* The Border Layer */
-  .terminal-button::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    /* This creates the border thickness */
-    padding: 1px; 
+  /* The "Inner" Body - This covers the center so only the 1px edge shows */
+  .terminal-button .inner-content {
+    @apply w-full h-full bg-background flex items-center justify-center transition-all duration-300;
+    /* We must repeat the clip-path here to ensure the inner shape matches the outer */
+    clip-path: polygon(0 0, 88% 0, 100% 30%, 100% 100%, 0 100%);
+    padding: 12px 24px; /* Real padding for your text */
+  }
+
+  /* Hover States */
+  .terminal-button:hover .inner-content {
     background: var(--system-green);
-    opacity: 0.3;
-    /* The magic: Masking out the center so only the "padding" (border) shows */
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .terminal-button:hover::before {
-    opacity: 1; /* Glow the border on hover */
-  }
-
-  /* The Hover Background Layer */
-  .terminal-button::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--system-green);
-    transform: translateY(100%); /* Start hidden at the bottom */
-    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-    z-index: -1; /* Stay behind the text */
-  }
-
-  .terminal-button:hover::after {
-    transform: translateY(0); /* Slide up on hover */
+    color: black;
   }
 
   .terminal-button:hover {
-    @apply text-black; /* Flip text color */
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
   }
 }

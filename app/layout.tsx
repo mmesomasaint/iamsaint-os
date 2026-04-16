@@ -67,9 +67,10 @@ export default function RootLayout({
                 href="/blog" 
                 className="terminal-button px-4 py-1.5 text-system-green flex items-center gap-2"
               >
-                {/* Live Status Pulse */}
-                <span className="w-1.5 h-1.5 rounded-full bg-system-green animate-pulse" />
-                <span className="font-bold">Journal.exe</span>
+                <span className="inner-content gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-system-green animate-pulse" />
+                  <span className="font-bold">Journal.exe</span>
+                </span>
               </a>
             </div>
           </div>
