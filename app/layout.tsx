@@ -65,11 +65,11 @@ export default function RootLayout({
               {/* The Journal "Trap" - High Contrast Industrial Style */}
               <a 
                 href="/blog" 
-                className="terminal-button px-4 py-1.5 text-system-green flex items-center gap-2"
+                className="terminal-button"
               >
                 <span className="inner-content gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-system-green animate-pulse" />
-                  <span className="font-bold">Journal.exe</span>
+                  Journal.exe
                 </span>
               </a>
             </div>

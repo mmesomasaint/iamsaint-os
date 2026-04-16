@@ -1,132 +1,112 @@
 @import "tailwindcss";
-@tailwind utilities;
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #050505;
-  --foreground: #ffffff;
-  --system-green: #00FF41;
-  --system-border: #1A1A1A;
-  --system-gray: #121212;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  /* Apply a sharp, anti-aliased look for that premium feel */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Add a subtle scanline effect or grid if you want to go full .tech */
-.industrial-grid {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, #121212 1px, transparent 1px),
-    linear-gradient(to bottom, #121212 1px, transparent 1px);
-}
-
-@layer utilities {.text-system-green {
-    color: var(--system-green);
-  }
-  .border-system-green {
-    border-color: var(--system-green);
-  }
-  .bg-system-green {
-    background-color: var(--system-green);
-  }
-  .bg-system-border {
-    background-color: var(--system-border);
-  }
-  .bg-system-gray {
-    background-color: var(--system-gray);
-  }
-  .bg-system-gray-10 {
-    background-color: rgba(18, 18, 18, 1.0)
-  }
-  .border-system-border {
-    border-color: var(--system-border);
-  }
-  .border-system-gray {
-    border-color: var(--system-gray);
-  }
-  .bg-system-green-5 {
-    background-color: rgba(0, 255, 65, 0.05);
-  }
-  .bg-system-green-10 {
-    background-color: rgba(0, 255, 65, 0.1);
-  }
-  .bg-system-green-20 {
-    background-color: rgba(0, 255, 65, 0.2);
-  }
-  .bg-system-green-30 {
-    background-color: rgba(0, 255, 65, 0.3);
-  }
-  .border-system-green-20 {
-    border-color: rgba(0, 255, 65, 0.2);
-  }
-  .border-system-green-30 {
-    border-color: rgba(0, 255, 65, 0.3);
-  }
+/* --- v4 Theme Configuration --- */
+/* Everything here automatically becomes a Tailwind utility (e.g., text-system-green) */
+@theme {
+  --color-background: #050505;
+  --color-foreground: #ffffff;
   
-  
-  /* Optional: Add a glow utility for that Senior Architect feel */
-  .glow-system-green {
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-  }
+  --color-system-green: #00FF41;
+  --color-system-border: #1A1A1A;
+  --color-system-gray: #121212;
 
-   /* Subtle flicker animation for the status indicators */
-  .animate-flicker {
-    animation: flicker 2s infinite;
-  }
+  /* Custom Animations */
+  --animate-flicker: flicker 2s infinite;
+  --animate-scanline: scanline 8s linear infinite;
+
+  /* Font Migration */
+  --font-mono: var(--font-geist-mono), "JetBrains Mono", monospace;
+
+  /* Custom Utilities migrated from 'backgroundImage' */
+  --background-image-grid-pattern: linear-gradient(to right, #121212 1px, transparent 1px), 
+                                   linear-gradient(to bottom, #121212 1px, transparent 1px);
+
+  /* Animations */
+  --animate-flicker: flicker 2s infinite;
+  --animate-scanline: scanline 8s linear infinite;
 
   @keyframes flicker {
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
     20%, 22%, 24%, 55% { opacity: 0.4; }
   }
-
-  /* The "Scanline" overlay for that retro-tech feel */
-  .scanline {
-    width: 100%;
-    height: 2px;
-    z-index: 10;
-    background: rgba(0, 255, 65, 0.1);
-    opacity: 0.1;
-    position: absolute;
-    bottom: 100%;
-    animation: scanline 8s linear infinite;
-  }
-
   @keyframes scanline {
     0% { bottom: 100%; }
     100% { bottom: 0%; }
   }
 }
 
+/* --- Base Layer --- */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* --- Component Layer --- */
 @layer components {
+  /* High-Performance Industrial Button */
   .terminal-button {
-    @apply relative flex items-center justify-center transition-all duration-300 overflow-hidden;
-    /* We apply the clip to the container itself */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
     clip-path: polygon(0 0, 88% 0, 100% 30%, 100% 100%, 0 100%);
-    color: var(--system-green);
-    background: var(--system-green); /* This will be the "Border Color" */
-    padding: 1px; /* This defines the "Border Thickness" */
+    background: var(--color-system-green); /* Border Source */
+    padding: 1px; /* Border Thickness */
   }
 
-  /* The "Inner" Body - This covers the center so only the 1px edge shows */
   .terminal-button .inner-content {
-    @apply w-full h-full bg-background flex items-center justify-center transition-all duration-300;
-    /* We must repeat the clip-path here to ensure the inner shape matches the outer */
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease;
     clip-path: polygon(0 0, 88% 0, 100% 30%, 100% 100%, 0 100%);
-    padding: 12px 24px; /* Real padding for your text */
+    padding: 0.75rem 1.5rem;
+    color: var(--color-system-green);
   }
 
-  /* Hover States */
+  /* Interaction Logic */
   .terminal-button:hover .inner-content {
-    background: var(--system-green);
+    background-color: var(--color-system-green);
     color: black;
   }
 
   .terminal-button:hover {
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.4));
+  }
+
+  /* Structural UI Elements */
+  .industrial-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, var(--color-system-gray) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-system-gray) 1px, transparent 1px);
+  }
+
+  .scanline {
+    width: 100%;
+    height: 2px;
+    z-index: 10;
+    background: var(--color-system-green-10);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: var(--animate-scanline);
+  }
+}
+
+/* --- Utilities Layer --- */
+@layer utilities {
+  .glow-system-green {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
   }
 }
