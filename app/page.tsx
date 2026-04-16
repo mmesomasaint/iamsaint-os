@@ -1,4 +1,6 @@
-import ProductBlade from "@/components/system/ProductBlade"
+import Archive from "@/components/system/Archive"
+import LogicViewer from "@/components/system/LogicViewer"
+import TransactionFlow from "@/components/system/TransactionFlow"
 import LiveStatus from "@/components/ui/LiveStatus"
 import ModuleCard from "@/components/ui/ModuleCard"
 import SystemMetrics from "@/components/ui/SystemMetrics"
@@ -116,6 +118,25 @@ export default function Home() {
           <div className="absolute -bottom-4 -right-4 opacity-5 pointer-events-none select-none">
             <span className="text-8xl font-black uppercase">HANDSHAKE</span>
           </div>
+        </div>
+      </section>
+
+      {/* Live Terminals Grid */}
+      <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="border border-system-border p-1 bg-system-gray/10">
+           <div className="p-4 border-b border-system-border text-[10px] font-mono text-gray-500 uppercase">Module: Intelligence_v2.0</div>
+           <LogicViewer />
+        </div>
+        <div className="border border-system-border p-1 bg-system-gray/10">
+           <div className="p-4 border-b border-system-border text-[10px] font-mono text-gray-500 uppercase">Module: Finance_Ledger</div>
+           <TransactionFlow />
+        </div>
+      </section>
+
+      {/* Archive of Past Projects */}
+      <section className="mt-32 mb-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <Archive />
         </div>
       </section>
 

@@ -117,6 +117,18 @@ export default function InitiatePage() {
           </div>
         </form>
       </div>
+
+      <div className="pt-6">
+        <a 
+          href="/saint-cv.pdf" 
+          target="_blank"
+          className="inline-flex items-center gap-3 px-6 py-3 border border-system-green text-system-green text-[10px] font-bold uppercase tracking-widest hover:bg-system-green hover:text-black transition-all clip-file"
+          style={{ clipPath: 'polygon(0 0, 85% 0, 100% 25%, 100% 100%, 0 100%)' }}
+        >
+          <span className="w-2 h-2 bg-system-green rounded-full animate-pulse" />
+          Download_System_Manifest.pdf
+        </a>
+      </div>
     </div>
   );
 }
