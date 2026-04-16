@@ -4,8 +4,7 @@
 :root {
   --background: #050505;
   --foreground: #ffffff;
-  --system-green: #00FF41; 
-  --system-green-rgb: 0 255 65;
+  --system-green: #00FF41;
   --system-border: #1A1A1A;
   --system-gray: #121212;
 }
@@ -40,6 +39,9 @@ body {
   }
   .bg-system-gray {
     background-color: var(--system-gray);
+  }
+  .bg-system-gray-10 {
+    background-color: rgba(18, 18, 18, 1.0)
   }
   .border-system-border {
     border-color: var(--system-border);

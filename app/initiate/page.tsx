@@ -65,7 +65,7 @@ export default function InitiatePage() {
             </div>
           </section>
 
-          <section className="p-6 border border-system-border bg-system-gray/20">
+          <section className="p-6 border border-system-border bg-system-gray-20">
             <h4 className="text-[10px] font-mono text-gray-500 uppercase mb-2 tracking-widest">Protocol_Log</h4>
             <p className="text-[11px] text-gray-500 leading-relaxed font-mono italic">
               - Validating input packets... <br/>
@@ -76,7 +76,7 @@ export default function InitiatePage() {
         </div>
 
         {/* The Formspree Terminal */}
-        <form onSubmit={handleSubmit} className="border border-system-border p-8 bg-system-gray/10 relative">
+        <form onSubmit={handleSubmit} className="border border-system-border p-8 bg-system-gray-10 relative">
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-system-green/40 to-transparent" />
           
           <div className="space-y-6">
@@ -109,7 +109,7 @@ export default function InitiatePage() {
             <button 
               type="submit" 
               disabled={state.submitting}
-              className="w-full py-4 bg-system-green-5 border border-system-green/20 text-system-green font-bold uppercase text-xs tracking-widest hover:border-system-green hover:text-black transition-all clip-file disabled:opacity-50 disabled:cursor-wait"
+              className="w-full py-4 bg-system-green-5 border border-system-green-20 text-system-green font-bold uppercase text-xs tracking-widest hover:border-system-green hover:text-black transition-all clip-file disabled:opacity-50 disabled:cursor-wait"
               style={{ clipPath: 'polygon(0 0, 90% 0, 100% 35%, 100% 100%, 0 100%)' }}
             >
               {state.submitting ? "TRANSMITTING..." : "TRANSMIT_DATA"}
