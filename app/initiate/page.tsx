@@ -109,7 +109,7 @@ export default function InitiatePage() {
             <button 
               type="submit" 
               disabled={state.submitting}
-              className="terminal-button w-full py-4 text-system-green font-bold uppercase text-xs tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
+              className="terminal-button tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span className="inner-content">
                 {state.submitting ? "TRANSMITTING..." : "TRANSMIT_DATA"}
